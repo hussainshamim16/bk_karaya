@@ -1,0 +1,2077 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bakhshish Karaaya — Verified Rentals in Karachi</title>
+    <meta name="description"
+        content="Find video-verified rental homes across Karachi with real utility badges: Line water, K-Electric load shedding, and Sui Gas pressure details." />
+
+    <!-- Google Fonts: Manrope, Sora, Noto Nastaliq Urdu -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;700&family=Sora:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="./public/Fav Icon.png" />
+
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        :root {
+            --primary-gold: #c9a227;
+            --primary-gold-dark: #b08d1f;
+            --primary-gold-light: #fef8e7;
+            --gold-gradient: linear-gradient(135deg, #d8b233, #b38b1d);
+            --dark-navy: #0f172a;
+            --dark-surface: #1e293b;
+            --slate-muted: #64748b;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --radius-pill: 9999px;
+            --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04);
+            --shadow-card: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+            --shadow-gold: 0 10px 25px -5px rgba(201, 162, 39, 0.45);
+        }
+
+        body {
+            font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .font-display {
+            font-family: 'Sora', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        .urdu-text {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            line-height: 2.1;
+        }
+
+        /* Navbar */
+        .site-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .brand-logo-icon {
+            background: var(--gold-gradient);
+            color: #fff;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            display: inline-grid;
+            place-items: center;
+            box-shadow: var(--shadow-gold);
+        }
+
+        .badge-karachi {
+            background: #f1f5f9;
+            color: var(--dark-navy);
+            border-radius: var(--radius-pill);
+            padding: 6px 14px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Buttons */
+        .btn-gold {
+            background: var(--gold-gradient);
+            color: #fff;
+            font-weight: 700;
+            border: none;
+            border-radius: var(--radius-pill);
+            box-shadow: var(--shadow-gold);
+            transition: all 0.25s ease;
+        }
+
+        .btn-gold:hover {
+            background: linear-gradient(135deg, #bfa02c, #9c7816);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px -6px rgba(201, 162, 39, 0.55);
+        }
+
+        .btn-outline-gold {
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold-dark);
+            background: transparent;
+            border-radius: var(--radius-pill);
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+
+        .btn-outline-gold:hover {
+            background: var(--primary-gold);
+            color: #fff;
+        }
+
+        .btn-icon-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f5f9;
+            color: var(--dark-navy);
+            border: none;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .btn-icon-circle:hover {
+            background: #e2e8f0;
+            color: var(--primary-gold-dark);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            background: linear-gradient(135deg, #090e17 0%, #17243c 50%, #0d1527 100%);
+            color: #ffffff;
+            padding: 85px 0 95px 0;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(201, 162, 39, 0.22) 0%, rgba(201, 162, 39, 0) 70%);
+            pointer-events: none;
+        }
+
+        .hero-pill-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius-pill);
+            padding: 6px 16px;
+            font-size: 0.85rem;
+            color: #fcebc2;
+        }
+
+        .search-box-wrapper {
+            background: #ffffff;
+            border-radius: var(--radius-pill);
+            padding: 7px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+            display: flex;
+            align-items: center;
+            max-width: 780px;
+            margin: 28px auto 0 auto;
+        }
+
+        .mic-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            border: none;
+            background: var(--gold-gradient);
+            color: #fff;
+            font-size: 1.25rem;
+            display: inline-grid;
+            place-items: center;
+            box-shadow: var(--shadow-gold);
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .mic-btn.active-listening {
+            animation: pulseMic 1.2s infinite;
+            background: #ef4444;
+        }
+
+        @keyframes pulseMic {
+            0% {
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 16px rgba(239, 68, 68, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+            }
+        }
+
+        .search-input-field {
+            border: none;
+            outline: none;
+            padding: 10px 18px;
+            font-size: 1rem;
+            color: var(--dark-navy);
+            width: 100%;
+        }
+
+        .quick-tag {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #f1f5f9;
+            border-radius: var(--radius-pill);
+            padding: 6px 15px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .quick-tag:hover {
+            background: var(--primary-gold);
+            color: #fff;
+            border-color: var(--primary-gold);
+        }
+
+        /* Property Cards */
+        .property-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: transform 0.28s ease, box-shadow 0.28s ease;
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .property-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-card);
+            border-color: #cbd5e1;
+        }
+
+        .property-thumb-box {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background: #e2e8f0;
+        }
+
+        .property-thumb-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .property-card:hover .property-thumb-box img {
+            transform: scale(1.04);
+        }
+
+        .badge-verified-float {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: #10b981;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.72rem;
+            padding: 4px 10px;
+            border-radius: var(--radius-pill);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.35);
+        }
+
+        .badge-video-float {
+            position: absolute;
+            bottom: 14px;
+            left: 14px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.75rem;
+            padding: 4px 12px;
+            border-radius: var(--radius-pill);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            backdrop-filter: blur(4px);
+        }
+
+        .save-btn-float {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255, 255, 255, 0.9);
+            color: #64748b;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            transition: all 0.2s;
+        }
+
+        .save-btn-float.saved {
+            color: #ef4444;
+            background: #ffffff;
+        }
+
+        .tts-speaker-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--primary-gold-light);
+            color: var(--primary-gold-dark);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            display: grid;
+            place-items: center;
+            transition: all 0.2s;
+        }
+
+        .tts-speaker-btn:hover {
+            background: var(--primary-gold);
+            color: #fff;
+        }
+
+        /* Utility Badges */
+        .util-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: var(--radius-pill);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .util-good {
+            background: #ecfdf5;
+            color: #047857;
+        }
+
+        .util-mid {
+            background: #fffbeb;
+            color: #b45309;
+        }
+
+        .util-bad {
+            background: #fef2f2;
+            color: #b91c1c;
+        }
+
+        /* Swiper Styling */
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 44px;
+            height: 44px;
+            background: #ffffff;
+            border-radius: 50%;
+            color: var(--dark-navy);
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-color);
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--primary-gold) !important;
+            width: 22px !important;
+            border-radius: 6px !important;
+        }
+
+        /* Filter Sidebar */
+        .filter-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 22px;
+        }
+
+        .filter-chip {
+            display: inline-block;
+            padding: 5px 12px;
+            background: #f1f5f9;
+            color: #334155;
+            border-radius: var(--radius-pill);
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin: 3px;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: all 0.15s;
+        }
+
+        .filter-chip.active {
+            background: var(--primary-gold);
+            color: #ffffff;
+        }
+
+        /* Agreement Stepper */
+        .step-pill {
+            height: 6px;
+            flex: 1;
+            border-radius: 99px;
+            background: #e2e8f0;
+            transition: background 0.3s;
+        }
+
+        .step-pill.active {
+            background: var(--primary-gold);
+        }
+
+        /* Printable agreement styles */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+
+            #printableAgreement,
+            #printableAgreement * {
+                visibility: visible;
+            }
+
+            #printableAgreement {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                margin: 0;
+                padding: 20px;
+            }
+        }
+
+        /* ================= NEW SECTIONS STYLING ================= */
+        .step-card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            padding: 28px 24px;
+            position: relative;
+            transition: all 0.28s ease;
+            height: 100%;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-card);
+            border-color: var(--primary-gold);
+        }
+
+        .step-number-badge {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--primary-gold-light);
+            color: var(--primary-gold-dark);
+            font-weight: 800;
+            display: inline-grid;
+            place-items: center;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+        }
+
+        .feature-box {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 26px;
+            height: 100%;
+            transition: all 0.25s ease;
+        }
+
+        .feature-box:hover {
+            border-color: var(--primary-gold);
+            box-shadow: var(--shadow-card);
+        }
+
+        .feature-icon-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            background: var(--primary-gold-light);
+            color: var(--primary-gold-dark);
+            display: inline-grid;
+            place-items: center;
+            font-size: 1.35rem;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .avatar-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #e2e8f0;
+            color: var(--dark-navy);
+            display: inline-grid;
+            place-items: center;
+            font-weight: 700;
+        }
+
+        .calc-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 34px;
+            box-shadow: var(--shadow-card);
+        }
+
+        .calc-result-box {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            border-radius: var(--radius-lg);
+            padding: 30px;
+        }
+
+        .faq-accordion .accordion-item {
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md) !important;
+            margin-bottom: 12px;
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        .faq-accordion .accordion-button {
+            font-weight: 700;
+            color: var(--dark-navy);
+            background: #ffffff;
+            box-shadow: none !important;
+            padding: 18px 22px;
+        }
+
+        .faq-accordion .accordion-button:not(.collapsed) {
+            background: var(--primary-gold-light);
+            color: var(--primary-gold-dark);
+        }
+
+        .faq-accordion .accordion-button::after {
+            background-size: 1.1rem;
+        }
+
+        .contact-info-card {
+            background: linear-gradient(135deg, #090e17 0%, #17243c 100%);
+            color: #ffffff;
+            border-radius: var(--radius-lg);
+            padding: 36px 30px;
+            height: 100%;
+        }
+
+        /* ================= OWNER VERIFICATION AUDIT SECTION ================= */
+        .audit-section {
+            background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .audit-section::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(201, 162, 39, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            top: -100px;
+            left: -100px;
+            pointer-events: none;
+        }
+
+        .audit-mockup-frame {
+            background: #090e17;
+            border: 2px solid rgba(201, 162, 39, 0.4);
+            border-radius: 28px;
+            padding: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), var(--shadow-gold);
+            position: relative;
+        }
+
+        .call-header-badge {
+            background: rgba(16, 185, 129, 0.2);
+            border: 1px solid #10b981;
+            color: #34d399;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: var(--radius-pill);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .live-indicator-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ef4444;
+            animation: livePulse 1.2s infinite;
+        }
+
+        @keyframes livePulse {
+            0% {
+                transform: scale(0.95);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.3);
+                opacity: 0.4;
+            }
+
+            100% {
+                transform: scale(0.95);
+                opacity: 1;
+            }
+        }
+
+        .audit-item-box {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            padding: 18px 20px;
+            transition: all 0.25s ease;
+        }
+
+        .audit-item-box:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary-gold);
+            transform: translateX(4px);
+        }
+
+        .audit-check-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--primary-gold-light);
+            color: var(--primary-gold-dark);
+            display: grid;
+            place-items: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= TOPBAR & NAVIGATION ================= -->
+    <header class="site-nav sticky-top">
+        <div class="container-xl py-2">
+            <div class="d-flex align-items-center justify-content-between">
+
+                <!-- Brand -->
+                <div class="d-flex align-items-center gap-3">
+                    <a href="./index.html" class="text-decoration-none d-flex align-items-center gap-2">
+                        <!-- <span class="brand-logo-icon"><i class="fa-solid fa-house-chimney"></i></span>
+                        <span class="fs-4 fw-extrabold text-dark tracking-tight">Bakhshish<span
+                                style="color: var(--primary-gold);">Karaaya</span></span> -->
+                        <img src="./public/Bakhshish-rent.png" alt="Bakhshish Karaaya Logo"
+                            style="height: 42px; width: auto;">
+                    </a>
+                    <span class="badge-karachi d-none d-md-inline-flex align-items-center gap-1">
+                        <i class="fa-solid fa-location-dot" style="color: var(--primary-gold);"></i> Karachi Verified
+                    </span>
+                </div>
+
+                <!-- Right navigation items -->
+                <div class="d-flex align-items-center gap-2 gap-sm-3">
+                    <a href="#howItWorks"
+                        class="btn btn-link text-decoration-none fw-bold text-dark d-none d-xl-inline-block">
+                        <span class="lang-en">How it Works</span>
+                        <span class="lang-ur d-none urdu-text">طریقہ کار</span>
+                    </a>
+                    <a href="#browseSection"
+                        class="btn btn-link text-decoration-none fw-bold text-dark d-none d-lg-inline-block">
+                        <span class="lang-en">Browse Homes</span>
+                        <span class="lang-ur d-none urdu-text">مکانات تلاش کریں</span>
+                    </a>
+
+                    <!-- Agreement Generator Modal Trigger -->
+                    <button
+                        class="btn btn-outline-secondary btn-sm rounded-pill fw-semibold px-3 py-2 d-none d-sm-inline-flex align-items-center gap-2"
+                        data-bs-toggle="modal" data-bs-target="#agreementModal">
+                        <i class="fa-solid fa-file-contract text-warning"></i>
+                        <span class="lang-en">Rent Agreement</span>
+                        <span class="lang-ur d-none urdu-text">کرایہ معاہدہ</span>
+                    </button>
+
+                    <!-- Saved count indicator -->
+                    <button class="btn-icon-circle" id="savedIndicatorBtn" title="Saved Properties"
+                        onclick="filterSavedProperties()">
+                        <i class="fa-solid fa-heart text-danger"></i>
+                        <span id="savedCounter"
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                            style="font-size: 0.65rem;">0</span>
+                    </button>
+
+                    <!-- Language toggle -->
+                    <button id="langToggleBtn" class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fw-bold">
+                        اردو
+                    </button>
+
+                    <!-- List property button abhi es button ko band kar rha hun esko jab on karo gey to aike popup dikhey ga jo key property add kary ga -->
+                    <!-- <button class="btn btn-gold btn-sm px-3 py-2 d-inline-flex align-items-center gap-2"
+                        data-bs-toggle="modal" data-bs-target="#listPropertyModal">
+                        <i class="fa-solid fa-circle-plus"></i>
+                        <span class="lang-en d-none d-md-inline">List Property</span>
+                        <span class="lang-ur d-none urdu-text">مکان درج کریں</span>
+                    </button> -->
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero-section text-center">
+        <div class="container-xl position-relative">
+            <div class="hero-pill-badge mb-3">
+                <i class="fa-solid fa-shield-halved text-warning"></i>
+                <span>100% Video Call Verified Landlords • No Fake Advance Scams</span>
+            </div>
+
+            <h1 class="display-4 fw-extrabold mb-2 text-white">
+                Karachi mein <span style="color: #f7cd46;">verified kiraye</span> ka ghar
+            </h1>
+            <p class="urdu-text fs-4 text-warning mb-2 lang-ur d-none">
+                کراچی میں ویڈیو کال سے تصدیق شدہ کرائے کے مکانات اور فلیٹس
+            </p>
+            <p class="lead text-light opacity-75 max-w-2xl mx-auto mb-4" style="max-width: 680px;">
+                Every home checked via live video walkthrough. Real status on K-Electric load shedding, Sui Gas
+                pressure, and sweet line water.
+            </p>
+
+            <!-- Voice & Text Search Bar -->
+            <div class="search-box-wrapper">
+                <button id="heroMicBtn" class="mic-btn" title="Tap to speak in Urdu or English"
+                    onclick="toggleVoiceSearch()">
+                    <i class="fa-solid fa-microphone"></i>
+                </button>
+                <input type="text" id="globalSearchInput" class="search-input-field"
+                    placeholder='Try "Gulshan 2 room flat 35k" or tap mic...' onkeyup="handleSearchKey(event)">
+                <button class="btn btn-dark rounded-pill px-4 py-2 fw-bold d-inline-flex align-items-center gap-2 me-1"
+                    onclick="applySearchQuery()">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span class="d-none d-sm-inline">Search</span>
+                </button>
+            </div>
+
+            <!-- Quick Area Tags -->
+            <div class="d-flex flex-wrap justify-content-center gap-2 mt-4 pt-1">
+                <span class="text-white-50 small me-1 align-self-center">Popular:</span>
+                <span class="quick-tag" onclick="quickFilterArea('Gulshan')">Gulshan-e-Iqbal</span>
+                <span class="quick-tag" onclick="quickFilterArea('DHA')">DHA Karachi</span>
+                <span class="quick-tag" onclick="quickFilterArea('Johar')">Gulistan-e-Johar</span>
+                <span class="quick-tag" onclick="quickFilterArea('Nazimabad')">Nazimabad</span>
+                <span class="quick-tag" onclick="quickFilterArea('North Karachi')">North Karachi</span>
+                <span class="quick-tag" onclick="quickFilterArea('Malir')">Malir</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= TRUST / SAFETY PROMISE BANNER ================= -->
+    <section class="py-4 bg-white border-bottom shadow-sm">
+        <div class="container-xl">
+            <div class="row g-3 align-items-center">
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center gap-3 p-2">
+                        <div class="fs-2 text-warning"><i class="fa-solid fa-video"></i></div>
+                        <div>
+                            <h6 class="mb-0 fw-bold">Live Video Walkthrough</h6>
+                            <small class="text-muted">Direct visual confirmation of room conditions & water
+                                lines.</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 border-start-md border-end-md">
+                    <div class="d-flex align-items-center gap-3 p-2">
+                        <div class="fs-2 text-success"><i class="fa-solid fa-id-card-clip"></i></div>
+                        <div>
+                            <h6 class="mb-0 fw-bold">CNIC & Ownership Matched</h6>
+                            <small class="text-muted">Landlord identity cross-checked with allotment/utility
+                                bills.</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center gap-3 p-2">
+                        <div class="fs-2 text-primary"><i class="fa-solid fa-file-signature"></i></div>
+                        <div>
+                            <h6 class="mb-0 fw-bold">Legal Sindh Rent Agreement</h6>
+                            <small class="text-muted">Instant 11-month bilingual template ready to print.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FEATURED PROPERTIES (SWIPER CAROUSEL) ================= -->
+    <section class="py-5">
+        <div class="container-xl">
+            <div class="d-flex align-items-end justify-content-between mb-4">
+                <div>
+                    <span class="badge bg-warning text-dark fw-bold mb-2 px-3 py-1 rounded-pill">Top Verified
+                        Listings</span>
+                    <h2 class="fw-extrabold mb-0">Featured Karachi Rentals</h2>
+                </div>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-outline-dark btn-sm rounded-circle p-2" id="prevFeatured"
+                        style="width:38px;height:38px;">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button class="btn btn-outline-dark btn-sm rounded-circle p-2" id="nextFeatured"
+                        style="width:38px;height:38px;">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Swiper Slider -->
+            <div class="swiper featuredSwiper">
+                <div class="swiper-wrapper" id="featuredSwiperWrapper">
+                    <!-- Dynamic Slides Populated via JS -->
+                </div>
+                <div class="swiper-pagination mt-4 position-relative"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 1. HOW IT WORKS SECTION ================= -->
+    <section id="howItWorks" class="py-5 bg-white">
+        <div class="container-xl">
+            <div class="text-center max-w-xl mx-auto mb-5" style="max-width: 650px;">
+                <span class="badge bg-warning text-dark fw-bold px-3 py-1 rounded-pill mb-2">Safe & Simple</span>
+                <h2 class="fw-extrabold">How Bakhshish Karaaya Works</h2>
+                <p class="text-muted small">Karachi mein fake agent commission aur token fraud se hifazat ke sath ghar
+                    kiraye par lene ka 4-step asaan tareeqa.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="step-card text-center">
+                        <div class="step-number-badge mx-auto">1</div>
+                        <h5 class="fw-bold mb-2">Search with Voice or Text</h5>
+                        <p class="text-muted small mb-0">Apni pasandeeda location, budget aur utility requirements Urdu
+                            ya English mein bolein ya filter karein.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="step-card text-center">
+                        <div class="step-number-badge mx-auto">2</div>
+                        <h5 class="fw-bold mb-2">Watch Live Video Tour</h5>
+                        <p class="text-muted small mb-0">Har property ka verified video walkthrough dekhein taake visit
+                            se pehle rooms aur condition ka sach pata chale.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="step-card text-center">
+                        <div class="step-number-badge mx-auto">3</div>
+                        <h5 class="fw-bold mb-2">Direct Owner WhatsApp</h5>
+                        <p class="text-muted small mb-0">Baghair kisi agent ke seedha verified landlord se WhatsApp par
+                            baat karein aur physical inspection schedule karein.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="step-card text-center">
+                        <div class="step-number-badge mx-auto">4</div>
+                        <h5 class="fw-bold mb-2">Print Legal Agreement</h5>
+                        <p class="text-muted small mb-0">Hamare 3-step rental deed tool se standard 11-month agreement
+                            tayar karein aur legal hifazat ke sath shift hon.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= MAIN PROPERTY BROWSE & FILTER SECTION ================= -->
+    <section id="browseSection" class="py-5 bg-light border-top">
+        <div class="container-xl">
+            <div class="row g-4">
+
+                <!-- Filter Sidebar -->
+                <div class="col-lg-3">
+                    <div class="filter-card sticky-top" style="top: 90px; z-index: 10;">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h5 class="fw-bold mb-0"><i class="fa-solid fa-sliders me-2 text-warning"></i>Filters</h5>
+                            <button class="btn btn-link btn-sm text-decoration-none text-muted p-0"
+                                onclick="resetFilters()">Reset All</button>
+                        </div>
+
+                        <!-- Area selector -->
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-uppercase text-muted">Area in Karachi</label>
+                            <select id="filterAreaSelect" class="form-select form-select-sm rounded-pill"
+                                onchange="applyFilters()">
+                                <option value="all">All Karachi</option>
+                                <option value="Gulshan-e-Iqbal">Gulshan-e-Iqbal</option>
+                                <option value="Nazimabad">Nazimabad</option>
+                                <option value="North Karachi">North Karachi</option>
+                                <option value="Korangi">Korangi</option>
+                                <option value="DHA">DHA Phase 1-8</option>
+                                <option value="Malir">Malir</option>
+                            </select>
+                        </div>
+
+                        <!-- Type -->
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-uppercase text-muted">Property Type</label>
+                            <div class="d-flex flex-wrap">
+                                <span class="filter-chip active" data-filter-type="all"
+                                    onclick="setChipFilter('type', 'all', this)">All</span>
+                                <span class="filter-chip" data-filter-type="flat"
+                                    onclick="setChipFilter('type', 'flat', this)">Flat</span>
+                                <span class="filter-chip" data-filter-type="portion"
+                                    onclick="setChipFilter('type', 'portion', this)">Portion</span>
+                                <span class="filter-chip" data-filter-type="room"
+                                    onclick="setChipFilter('type', 'room', this)">Room</span>
+                                <span class="filter-chip" data-filter-type="house"
+                                    onclick="setChipFilter('type', 'house', this)">House</span>
+                            </div>
+                        </div>
+
+                        <!-- Bedrooms -->
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-uppercase text-muted">Bedrooms</label>
+                            <div class="d-flex flex-wrap">
+                                <span class="filter-chip active" data-filter-rooms="all"
+                                    onclick="setChipFilter('rooms', 'all', this)">Any</span>
+                                <span class="filter-chip" data-filter-rooms="1"
+                                    onclick="setChipFilter('rooms', '1', this)">1 Bed</span>
+                                <span class="filter-chip" data-filter-rooms="2"
+                                    onclick="setChipFilter('rooms', '2', this)">2 Bed</span>
+                                <span class="filter-chip" data-filter-rooms="3"
+                                    onclick="setChipFilter('rooms', '3', this)">3+ Bed</span>
+                            </div>
+                        </div>
+
+                        <!-- Water -->
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-uppercase text-muted">Water Availability</label>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="lineWaterOnlyCheck"
+                                    onchange="applyFilters()">
+                                <label class="form-check-label small fw-semibold" for="lineWaterOnlyCheck">Only Sweet
+                                    Line Water (No Tanker)</label>
+                            </div>
+                        </div>
+
+                        <!-- Max Load shedding -->
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-uppercase text-muted">Max Load-shedding</label>
+                            <select id="loadSheddingSelect" class="form-select form-select-sm rounded-pill"
+                                onchange="applyFilters()">
+                                <option value="all">Any hours</option>
+                                <option value="0">0 hours (Exempt / Solar)</option>
+                                <option value="2">Max 2 hours/day</option>
+                                <option value="4">Max 4 hours/day</option>
+                            </select>
+                        </div>
+
+                        <!-- Price Range -->
+                        <div class="mb-2">
+                            <div class="d-flex justify-content-between small fw-bold text-muted">
+                                <span>MAX RENT</span>
+                                <span id="priceLabelDisplay" class="text-dark">PKR 100,000</span>
+                            </div>
+                            <input type="range" class="form-range" min="10000" max="100000" step="5000" value="100000"
+                                id="rentRangeInput" oninput="updatePriceLabel(this.value)" onchange="applyFilters()">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Grid Result Area -->
+                <div class="col-lg-9">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5 class="fw-bold mb-0">
+                            <span id="resultsCount">0</span> Homes Found
+                        </h5>
+                        <div class="text-muted small">
+                            <i class="fa-solid fa-volume-high text-warning me-1"></i> Tap sound icon to hear details in
+                            Urdu
+                        </div>
+                    </div>
+
+                    <!-- The Dynamic Grid -->
+                    <div class="row g-4" id="propertiesGrid">
+                        <!-- Property cards injected dynamically -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ================= DIRECT OWNER VERIFICATION / TRUST BADGE SECTION ================= -->
+    <section class="py-5 audit-section" id="ownerVerificationSection">
+        <div class="container-xl position-relative">
+
+            <div class="row g-5 align-items-center">
+
+                <!-- Left Column: What We Check on Live Video Call -->
+                <div class="col-lg-6">
+                    <span class="hero-pill-badge mb-3">
+                        <i class="fa-solid fa-shield-halved text-warning"></i>
+                        <span>Zero Fake Advance Fraud Guarantee</span>
+                    </span>
+
+                    <h2 class="display-6 fw-extrabold text-white mb-3">
+                        Live Video Call Par <span style="color: #f7cd46;">"Tapka-Tap"</span> Inspection
+                    </h2>
+                    <p class="text-white-50 mb-4">
+                        Karachi mein fake photographs aur purani videos se bachne ke liye hamari verification team
+                        landlord ke sath live WhatsApp call par yeh 4 bunyadi cheezein on-the-spot verify karti hai:
+                    </p>
+
+                    <div class="d-flex flex-column gap-3 mb-4">
+                        <!-- Check 1 -->
+                        <div class="audit-item-box d-flex align-items-start gap-3">
+                            <div class="audit-check-icon"><i class="fa-solid fa-id-card"></i></div>
+                            <div>
+                                <h6 class="fw-bold text-white mb-1">1. Live CNIC & Original Allotment Slip</h6>
+                                <p class="text-white-50 small mb-0">Owner camera ke samne apna asal CNIC aur K-Electric
+                                    bill ya allotment letter match karwata hai taake sub-letting ya fake agent ka imkaan
+                                    khatam ho.</p>
+                            </div>
+                        </div>
+
+                        <!-- Check 2 -->
+                        <div class="audit-item-box d-flex align-items-start gap-3">
+                            <div class="audit-check-icon"><i class="fa-solid fa-faucet-drip"></i></div>
+                            <div>
+                                <h6 class="fw-bold text-white mb-1">2. Kitchen & Washroom Tap Water Test</h6>
+                                <p class="text-white-50 small mb-0">Live video mein nalka khol kar check kiya jata hai
+                                    ke line ka meetha pani pressure se aa raha hai ya motor/tanker par munhasir hai.</p>
+                            </div>
+                        </div>
+
+                        <!-- Check 3 -->
+                        <div class="audit-item-box d-flex align-items-start gap-3">
+                            <div class="audit-check-icon"><i class="fa-solid fa-fire-burner"></i></div>
+                            <div>
+                                <h6 class="fw-bold text-white mb-1">3. Sui Gas Stove Live Ignition</h6>
+                                <p class="text-white-50 small mb-0">Chulha on kar ke flame ka pressure check hota hai
+                                    taake tenant ko cylinder ya compressor ki pareshani na uthani pare.</p>
+                            </div>
+                        </div>
+
+                        <!-- Check 4 -->
+                        <div class="audit-item-box d-flex align-items-start gap-3">
+                            <div class="audit-check-icon"><i class="fa-solid fa-key"></i></div>
+                            <div>
+                                <h6 class="fw-bold text-white mb-1">4. Physical Possession & Key Handover Check</h6>
+                                <p class="text-white-50 small mb-0">Tala khol kar poore flat/house ke rooms, balcony aur
+                                    ventilation ka clear view liya jata hai taake har kamre ki halat saaf nazar aaye.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-wrap gap-3">
+                        <button
+                            class="btn btn-gold px-4 py-2.5 rounded-pill fw-bold d-inline-flex align-items-center gap-2"
+                            data-bs-toggle="modal" data-bs-target="#listPropertyModal">
+                            <i class="fa-solid fa-video"></i>
+                            <span>Apne Ghar Ka Live Audit Karwayen</span>
+                        </button>
+                        <a href="#browseSection" class="btn btn-outline-light px-4 py-2.5 rounded-pill fw-bold">
+                            Verified Flats Dekhein
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Video Call Audit Mockup -->
+                <div class="col-lg-6">
+                    <div class="audit-mockup-frame">
+
+                        <!-- Call Top Status Bar -->
+                        <div class="d-flex align-items-center justify-content-between mb-3 px-2">
+                            <div class="call-header-badge">
+                                <span class="live-indicator-dot"></span>
+                                <span>AUDIT CALL IN PROGRESS</span>
+                            </div>
+                            <span class="text-white-50 small fw-bold">
+                                <i class="fa-solid fa-lock text-warning me-1"></i> End-to-End Verified
+                            </span>
+                        </div>
+
+                        <!-- Video Call Screen Frame -->
+                        <div class="position-relative rounded-4 overflow-hidden"
+                            style="height: 380px; background: #000;">
+                            <!-- Mockup Background (Flat Interior) -->
+                            <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&auto=format&fit=crop&q=80"
+                                alt="Live Room Inspection" class="w-100 h-100 object-fit-cover opacity-75">
+
+                            <!-- Overlay: Owner PiP Camera -->
+                            <div class="position-absolute top-0 end-0 m-3 p-1 rounded-3 bg-dark border border-warning"
+                                style="width: 120px; height: 160px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.6);">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&auto=format&fit=crop&q=80"
+                                    alt="Verified Landlord" class="w-100 h-100 object-fit-cover">
+                                <span
+                                    class="position-absolute bottom-0 start-0 w-100 text-center bg-black bg-opacity-75 text-white"
+                                    style="font-size: 0.65rem; padding: 2px;">Verified Owner</span>
+                            </div>
+
+                            <!-- Real-time Verification Overlay Chips -->
+                            <div class="position-absolute top-0 start-0 m-3 d-flex flex-column gap-2">
+                                <span
+                                    class="badge bg-success bg-opacity-90 py-1.5 px-3 rounded-pill text-white fw-bold shadow-sm"
+                                    style="font-size: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check me-1"></i> CNIC: 42101-*******-1 Matched
+                                </span>
+                                <span
+                                    class="badge bg-primary bg-opacity-90 py-1.5 px-3 rounded-pill text-white fw-bold shadow-sm"
+                                    style="font-size: 0.75rem;">
+                                    <i class="fa-solid fa-droplet me-1"></i> Line Water Running (Live)
+                                </span>
+                                <span class="badge bg-warning text-dark fw-bold py-1.5 px-3 rounded-pill shadow-sm"
+                                    style="font-size: 0.75rem;">
+                                    <i class="fa-solid fa-bolt me-1"></i> PMT Feeder: Load-shedding 0h
+                                </span>
+                            </div>
+
+                            <!-- Bottom Audio / Visual Status -->
+                            <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-gradient"
+                                style="background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);">
+                                <div class="d-flex align-items-center justify-content-between text-white">
+                                    <div>
+                                        <h6 class="mb-0 fw-bold">Gulshan Block 13-D — Flat Inspection</h6>
+                                        <small class="text-white-50">Auditor: Hamza (Bakhshish Verification
+                                            Desk)</small>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <span class="btn btn-sm btn-outline-light rounded-circle"
+                                            style="width:34px;height:34px;display:grid;place-items:center;">
+                                            <i class="fa-solid fa-microphone"></i>
+                                        </span>
+                                        <span class="btn btn-sm btn-danger rounded-circle"
+                                            style="width:34px;height:34px;display:grid;place-items:center;">
+                                            <i class="fa-solid fa-phone-slash"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Badge Trust Banner Under Mockup -->
+                        <div
+                            class="mt-3 p-3 rounded-3 bg-white bg-opacity-10 border border-white-10 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="fa-solid fa-certificate text-warning fs-4"></i>
+                                <div>
+                                    <small class="text-white-50 d-block" style="font-size: 0.7rem;">OFFICIAL
+                                        PROTOCOL</small>
+                                    <span class="fw-bold text-white small">Green Badge issuance takes 24 hours</span>
+                                </div>
+                            </div>
+                            <span class="badge bg-warning text-dark fw-bold px-3 py-1.5 rounded-pill"
+                                style="font-size: 0.75rem;">
+                                100% Anti-Fraud
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- ================= 2. WHY CHOOSE US / UTILITY TRANSPARENCY ================= -->
+    <section class="py-5 bg-light border-top border-bottom">
+        <div class="container-xl">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-5">
+                    <span class="badge bg-danger-subtle text-danger fw-bold px-3 py-1 rounded-pill mb-2">Karachi Reality
+                        Check</span>
+                    <h2 class="fw-extrabold mb-3">Karachi Mein Ghar Lene Se Pehle Asal Maloomat</h2>
+                    <p class="text-muted mb-4">Ghar rent par lene ke baad tanker ka kharcha, gas ki kami aur load
+                        shedding tenant ka sukoon cheen leti hain. Bakhshish Karaaya pe pehle din sach bataya jata hai.
+                    </p>
+                    <div class="d-flex gap-3 mb-3">
+                        <div class="feature-icon-circle"><i class="fa-solid fa-droplet text-primary"></i></div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Pani: Line vs Tanker Alert</h6>
+                            <p class="text-muted small mb-0">Hum verify karte hain ke tap mein meetha line water aata
+                                hai ya mahana 10,000–15,000 ka tanker mangwana parta hai.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3 mb-3">
+                        <div class="feature-icon-circle"><i class="fa-solid fa-bolt text-warning"></i></div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Real K-Electric Feeder Schedule</h6>
+                            <p class="text-muted small mb-0">Area ke PMT aur feeder schedule ke mutabiq load shedding ke
+                                actual ghante display kiye jaate hain.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <div class="feature-icon-circle"><i class="fa-solid fa-fire text-danger"></i></div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Sui Gas Pressure Verification</h6>
+                            <p class="text-muted small mb-0">Khana pakane ke awqaat (breakfast & dinner) mein Sui Gas
+                                pressure ka sahi status verified rehta hai.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="feature-box">
+                                <div class="feature-icon-circle"><i class="fa-solid fa-shield-virus text-success"></i>
+                                </div>
+                                <h5 class="fw-bold mb-2">Zero Token Fraud</h5>
+                                <p class="text-muted small mb-0">Advance scam aur fake ownership papers se bachne ke
+                                    liye physical meter aur CNIC cross-verification.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="feature-box">
+                                <div class="feature-icon-circle"><i
+                                        class="fa-solid fa-microphone-lines text-warning"></i></div>
+                                <h5 class="fw-bold mb-2">Voice Search in Urdu</h5>
+                                <p class="text-muted small mb-0">Mobile users ke liye easy Urdu voice commands taake har
+                                    koi asaani se apna man-pasand ghar dhoond sake.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="feature-box">
+                                <div class="feature-icon-circle"><i class="fa-solid fa-handshake-angle text-info"></i>
+                                </div>
+                                <h5 class="fw-bold mb-2">Direct Owner Contact</h5>
+                                <p class="text-muted small mb-0">Baghair bhari commission ke seedha verified owner se
+                                    transparent rental negotiations.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="feature-box">
+                                <div class="feature-icon-circle"><i class="fa-solid fa-print text-dark"></i></div>
+                                <h5 class="fw-bold mb-2">Sindh Ordinance Deeds</h5>
+                                <p class="text-muted small mb-0">Sindh Rented Premises Ordinance ke mutabiq legally
+                                    sound aur customizable 11-month printable agreement.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 3. ABOUT US / MISSION SECTION ================= -->
+    <section class="py-5 bg-white">
+        <div class="container-xl">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800&auto=format&fit=crop&q=80"
+                            alt="Karachi Skyline & Living" class="img-fluid rounded-4 shadow-card w-100"
+                            style="max-height: 420px; object-fit: cover;">
+                        <div
+                            class="position-absolute bottom-0 start-0 m-3 p-3 bg-white rounded-3 shadow-sm border d-flex align-items-center gap-3">
+                            <div class="brand-logo-icon"><i class="fa-solid fa-users"></i></div>
+                            <div>
+                                <h6 class="fw-bold mb-0">1,500+ Karachi Families</h6>
+                                <small class="text-muted">Safely shifted without brokerage scams</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <span class="badge bg-warning text-dark fw-bold px-3 py-1 rounded-pill mb-2">About Our
+                        Mission</span>
+                    <h2 class="fw-extrabold mb-3">Hamara Maqsad: Karachi Ke Kirayedaaron Ka Etemad</h2>
+                    <p class="text-muted">Karachi jese bare sheher mein aam tor par kiraye ka ghar dhoondna ek azmaish
+                        ban jata hai. Fake pictures, chupi hui kharabiyan aur token advance le kar bhaag jane wale
+                        agents aam hain.</p>
+                    <p class="text-muted small"><strong>Bakhshish Karaaya</strong> ka aaghaz is masle ke mustaqil hal ke
+                        liye kiya gaya. Hum har property ka live video call ke zariye jaiza lete hain, meter bills check
+                        karte hain aur tenant ko wohi dikhate hain jo ground par maujood hai.</p>
+                    <div class="row g-3 pt-2">
+                        <div class="col-sm-4 text-center text-sm-start">
+                            <h3 class="fw-extrabold text-warning mb-0">100%</h3>
+                            <small class="text-muted fw-semibold">Video Verified</small>
+                        </div>
+                        <div class="col-sm-4 text-center text-sm-start">
+                            <h3 class="fw-extrabold text-warning mb-0">15+</h3>
+                            <small class="text-muted fw-semibold">Karachi Towns</small>
+                        </div>
+                        <div class="col-sm-4 text-center text-sm-start">
+                            <h3 class="fw-extrabold text-warning mb-0">Rs 0</h3>
+                            <small class="text-muted fw-semibold">Hidden Charges</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 4. TESTIMONIALS / REVIEWS SLIDER ================= -->
+    <section class="py-5 bg-light border-top">
+        <div class="container-xl">
+            <div class="d-flex align-items-end justify-content-between mb-4">
+                <div>
+                    <span class="badge bg-warning text-dark fw-bold px-3 py-1 rounded-pill mb-2">Real Stories</span>
+                    <h2 class="fw-extrabold mb-0">What Karachiites Say About Us</h2>
+                </div>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-outline-dark btn-sm rounded-circle p-2" id="prevReview"
+                        style="width:38px;height:38px;">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button class="btn btn-outline-dark btn-sm rounded-circle p-2" id="nextReview"
+                        style="width:38px;height:38px;">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="swiper reviewsSwiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide h-auto">
+                        <div class="testimonial-card">
+                            <div>
+                                <div class="text-warning mb-2">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="text-muted small mb-4">"Gulshan Block 13 mein flat dhoond raha tha. Video call
+                                    walkthrough se pehle hi pata chal gaya tha ke line water sweet hai. Na koi agent
+                                    commission na koi jhoot!"</p>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="avatar-circle">TI</div>
+                                <div>
+                                    <h6 class="fw-bold mb-0">Tariq Imran</h6>
+                                    <small class="text-muted">Gulshan-e-Iqbal, Tenant</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide h-auto">
+                        <div class="testimonial-card">
+                            <div>
+                                <div class="text-warning mb-2">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="text-muted small mb-4">"Mera upper portion khali tha. Listing karne ke 2
+                                    ghante baad video call verification hui aur seedha respectable family se contact ho
+                                    gaya. Super easy platform!"</p>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="avatar-circle">MA</div>
+                                <div>
+                                    <h6 class="fw-bold mb-0">Muhammad Arif</h6>
+                                    <small class="text-muted">Nazimabad, Landlord</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide h-auto">
+                        <div class="testimonial-card">
+                            <div>
+                                <div class="text-warning mb-2">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                                <p class="text-muted small mb-4">"Rent Agreement generator ne hamara bohat time aur
+                                    paisa bachaya. 3 minute mein accurate legal print tayar ho gaya jisme CNIC details
+                                    auto-filled thein."</p>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="avatar-circle">SN</div>
+                                <div>
+                                    <h6 class="fw-bold mb-0">Syeda Naila</h6>
+                                    <small class="text-muted">Gulistan-e-Johar, Tenant</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide h-auto">
+                        <div class="testimonial-card">
+                            <div>
+                                <div class="text-warning mb-2">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="text-muted small mb-4">"Voice search Urdu mein aawaz pehchan leta hai! Mere
+                                    walid sahab ne khud 'North Karachi 2 kamre' bol kar flat check kiya. Bohat asaan
+                                    system hai."</p>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="avatar-circle">FK</div>
+                                <div>
+                                    <h6 class="fw-bold mb-0">Faisal Khan</h6>
+                                    <small class="text-muted">North Karachi, Tenant</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 5. INTERACTIVE RENT AFFORDABILITY CALCULATOR ================= -->
+    <section class="py-5 bg-white border-bottom">
+        <div class="container-xl">
+            <div class="text-center max-w-xl mx-auto mb-5" style="max-width: 600px;">
+                <span class="badge bg-warning text-dark fw-bold px-3 py-1 rounded-pill mb-2">Smart Budgeting</span>
+                <h2 class="fw-extrabold">Karachi Rent Affordability Calculator</h2>
+                <p class="text-muted small">Apni mahana aamdani aur bijli/pani ke kharche daal kar safe monthly rent
+                    budget maloom karein taake baad mein pareshani na ho.</p>
+            </div>
+            <div class="calc-card max-w-4xl mx-auto" style="max-width: 900px;">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-7">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold small text-muted text-uppercase">Monthly Family Income
+                                (PKR)</label>
+                            <input type="number" class="form-control rounded-pill px-3" id="calcIncome" value="120000"
+                                step="5000" oninput="calculateAffordableRent()">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold small text-muted text-uppercase">Estimated Monthly Utility
+                                Bills (KE + Gas + Water)</label>
+                            <input type="number" class="form-control rounded-pill px-3" id="calcBills" value="18000"
+                                step="1000" oninput="calculateAffordableRent()">
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label fw-bold small text-muted text-uppercase">Budget Safety Ratio
+                                (Standard 35% of income)</label>
+                            <input type="range" class="form-range" id="calcRatio" min="25" max="45" value="35"
+                                oninput="calculateAffordableRent()">
+                            <div class="d-flex justify-content-between small text-muted">
+                                <span>Conservative (25%)</span>
+                                <span id="ratioDisplay" class="fw-bold text-dark">35%</span>
+                                <span>Aggressive (45%)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="calc-result-box text-center">
+                            <span class="text-uppercase small text-white-50 fw-bold">Safe Monthly Rent Target</span>
+                            <h2 class="display-6 fw-extrabold text-warning my-2" id="calcRentResult">PKR 35,000</h2>
+                            <p class="small text-white-50 mb-3">Is range mein ghar talash karne se aapka budget
+                                comfortable rahega.</p>
+                            <button class="btn btn-gold btn-sm rounded-pill px-4 w-100 fw-bold"
+                                onclick="applyCalculatedBudget()">
+                                Show Homes in this Budget
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 6. FREQUENTLY ASKED QUESTIONS (ACCORDION) ================= -->
+    <section class="py-5 bg-light">
+        <div class="container-xl">
+            <div class="text-center max-w-xl mx-auto mb-5" style="max-width: 600px;">
+                <span class="badge bg-warning text-dark fw-bold px-3 py-1 rounded-pill mb-2">Got Questions?</span>
+                <h2 class="fw-extrabold">Frequently Asked Questions</h2>
+                <p class="text-muted small">Karachi rental agreements, verification process aur security deposits ke
+                    hawale se aam sawalat ke jawab.</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion faq-accordion" id="faqAccordion">
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1">
+                                    Video call verification ka kia matlab hai?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Bakhshish Karaaya ki team har listing ke landlord se live WhatsApp video call karti
+                                    hai jismein ghar ke har kamre, washroom aur pani ke pipe ka live visual liya jata
+                                    hai aur landlord ka CNIC meter bill ke sath verify kiya jata hai.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq2">
+                                    Karachi mein standard security deposit kitna hota hai?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Aam tor par Karachi mein 2 mahine ka rent bator refundable security deposit liya
+                                    jata hai. Kuch areas (jaise DHA ya high-end portions) mein yeh 3 mahine tak bhi ho
+                                    sakta hai. Agreement mein iska baqaida inderaj zaroori hota hai.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq3">
+                                    Rental agreement 11 mahine ka hi kyun banaya jata hai?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Sindh Rented Premises Ordinance ke mutabiq 11 mahine ke tenancy deed ko compulsory
+                                    registration ki zaroorat nahi hoti, jis se stamp duty aur legal formalities ka
+                                    kharcha kam ho jata hai aur ba-asani renew ho sakta hai.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq4">
+                                    Kia Bakhshish Karaaya koi commission charge karta hai?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Nahi! Tenants ke liye verified properties browse karna aur direct landlord se rabta
+                                    karna bilkul muft hai. Hum traditional estate agents ki tarah bhari monthly
+                                    commission charge nahi karte.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 7. CONTACT US & DIRECT SUPPORT ================= -->
+    <section class="py-5 bg-white border-top">
+        <div class="container-xl">
+            <div class="row g-4 align-items-stretch">
+                <div class="col-lg-5">
+                    <div class="contact-info-card d-flex flex-column justify-content-between">
+                        <div>
+                            <span class="badge bg-warning text-dark fw-bold px-3 py-1 rounded-pill mb-3">Direct
+                                Support</span>
+                            <h3 class="fw-extrabold mb-3 text-white">Karachi Help Desk</h3>
+                            <p class="text-white-50 small mb-4">Koi issue ho, listing report karni ho ya landlord
+                                verification request submit karni ho, hamari local Karachi team aapki madad ke liye
+                                hazir hai.</p>
+
+                            <div class="d-flex align-items-start gap-3 mb-3">
+                                <div class="fs-5 text-warning"><i class="fa-solid fa-location-dot"></i></div>
+                                <div>
+                                    <h6 class="fw-bold mb-0 text-white">Head Office</h6>
+                                    <small class="text-white-50">Main Shahrah-e-Faisal, Near FTC, Karachi,
+                                        Pakistan</small>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-start gap-3 mb-3">
+                                <div class="fs-5 text-warning"><i class="fa-solid fa-phone"></i></div>
+                                <div>
+                                    <h6 class="fw-bold mb-0 text-white">Phone Helpline</h6>
+                                    <small class="text-white-50">0300-4427354 (Mon–Sat, 10 AM to 7 PM)</small>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="fs-5 text-success"><i class="fa-brands fa-whatsapp"></i></div>
+                                <div>
+                                    <h6 class="fw-bold mb-0 text-white">Direct WhatsApp Assistance</h6>
+                                    <small class="text-white-50">+92 300 0000000 (Instant Chat)</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 pt-3 border-top border-white-10">
+                            <a href="https://wa.me/923000000000" target="_blank"
+                                class="btn btn-gold w-100 rounded-pill py-2.5 fw-bold d-inline-flex align-items-center justify-content-center gap-2">
+                                <i class="fa-brands fa-whatsapp fs-5"></i> Chat on WhatsApp Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="card border p-4 rounded-4 shadow-sm h-100">
+                        <h4 class="fw-extrabold mb-2">Send Us a Direct Message</h4>
+                        <p class="text-muted small mb-4">Form bhariye, hamari Karachi verification team 30 minutes ke
+                            andar aapse rabta karegi.</p>
+                        <form id="supportContactForm" onsubmit="handleSupportSubmit(event)">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Your Name</label>
+                                    <input type="text" id="contactName" class="form-control rounded-3"
+                                        placeholder="e.g. Daniyal Siddiqui" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">WhatsApp / Phone Number</label>
+                                    <input type="text" id="contactPhone" class="form-control rounded-3"
+                                        placeholder="03XXXXXXXXX" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Preferred Karachi Area</label>
+                                    <input type="text" id="contactArea" class="form-control rounded-3"
+                                        placeholder="e.g. Gulshan, DHA, Nazimabad">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Reason for Contact</label>
+                                    <select id="contactReason" class="form-select rounded-3">
+                                        <option value="find">Help finding a verified flat</option>
+                                        <option value="verify">Verify my listed property</option>
+                                        <option value="agreement">Rental agreement query</option>
+                                        <option value="report">Report fake listing / fraud</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold">Message / Details</label>
+                                    <textarea id="contactMessage" class="form-control rounded-3" rows="3"
+                                        placeholder="Describe your query..." required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-dark rounded-pill px-4 py-2.5 fw-bold w-100">
+                                        Send Message to Support
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 3-STEP RENT AGREEMENT GENERATOR MODAL ================= -->
+    <div class="modal fade" id="agreementModal" tabindex="-1" aria-labelledby="agreementModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: var(--radius-lg);">
+                <div class="modal-header border-bottom-0 pb-0">
+                    <div>
+                        <h5 class="modal-title fw-extrabold" id="agreementModalLabel">
+                            <i class="fa-solid fa-file-contract text-warning me-2"></i>Karachi Rent Agreement Generator
+                        </h5>
+                        <small class="text-muted">Generates a standard 11-month legal rental tenancy deed under Sindh
+                            Rented Premises Ordinance.</small>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body pt-3">
+                    <!-- Stepper Indicator -->
+                    <div class="d-flex gap-2 mb-3">
+                        <div class="step-pill active" id="stepPill1"></div>
+                        <div class="step-pill" id="stepPill2"></div>
+                        <div class="step-pill" id="stepPill3"></div>
+                    </div>
+
+                    <form id="agreementForm">
+                        <!-- STEP 1: Parties -->
+                        <div id="agreementStep1" class="step-section">
+                            <h6 class="fw-bold text-primary mb-3">Step 1: Landlord & Tenant CNIC Info</h6>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Landlord Full Name</label>
+                                    <input type="text" class="form-control rounded-3" id="agLandlord"
+                                        placeholder="e.g. Muhammad Rashid" required value="Rashid Ahmed">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Landlord CNIC (13-digits)</label>
+                                    <input type="text" class="form-control rounded-3" id="agLandlordCnic"
+                                        placeholder="42101-XXXXXXX-X" required value="42101-7654321-1">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Tenant Full Name</label>
+                                    <input type="text" class="form-control rounded-3" id="agTenant"
+                                        placeholder="e.g. Asad Ullah Khan" required value="Asad Ullah">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Tenant CNIC (13-digits)</label>
+                                    <input type="text" class="form-control rounded-3" id="agTenantCnic"
+                                        placeholder="42201-XXXXXXX-X" required value="42201-1234567-3">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- STEP 2: Property & Money -->
+                        <div id="agreementStep2" class="step-section d-none">
+                            <h6 class="fw-bold text-primary mb-3">Step 2: Property & Financial Terms</h6>
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold">Premises Full Address (Karachi)</label>
+                                    <input type="text" class="form-control rounded-3" id="agAddress"
+                                        placeholder="Flat # B-4, 2nd Floor, Block 13-D, Gulshan-e-Iqbal, Karachi"
+                                        required value="Flat B-4, Block 13, Gulshan-e-Iqbal, Karachi">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Monthly Rent (PKR)</label>
+                                    <input type="number" class="form-control rounded-3" id="agRent" placeholder="35000"
+                                        required value="35000">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Security Deposit (Refundable PKR)</label>
+                                    <input type="number" class="form-control rounded-3" id="agDeposit"
+                                        placeholder="70000" required value="70000">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- STEP 3: Dates & Duration -->
+                        <div id="agreementStep3" class="step-section d-none">
+                            <h6 class="fw-bold text-primary mb-3">Step 3: Tenancy Duration & Notice Period</h6>
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <label class="form-label small fw-bold">Agreement Start Date</label>
+                                    <input type="date" class="form-control rounded-3" id="agStartDate"
+                                        value="2026-11-01" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label small fw-bold">Tenancy Duration</label>
+                                    <select class="form-select rounded-3" id="agMonths">
+                                        <option value="11" selected>11 Months (Standard)</option>
+                                        <option value="12">1 Year</option>
+                                        <option value="24">2 Years</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label small fw-bold">Eviction Notice Period</label>
+                                    <select class="form-select rounded-3" id="agNotice">
+                                        <option value="1" selected>1 Month Prior Notice</option>
+                                        <option value="2">2 Months Prior Notice</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Printable preview container (hidden unless printed) -->
+                    <div id="printableAgreement" class="d-none mt-4 p-4 border bg-white rounded">
+                        <!-- Injected before print -->
+                    </div>
+                </div>
+
+                <div class="modal-footer border-top-0 pt-0">
+                    <button type="button" class="btn btn-light rounded-pill px-4" id="agPrevBtn"
+                        onclick="prevAgreementStep()" disabled>Back</button>
+                    <button type="button" class="btn btn-gold rounded-pill px-4" id="agNextBtn"
+                        onclick="nextAgreementStep()">Next Step</button>
+                    <button type="button" class="btn btn-dark rounded-pill px-4 d-none" id="agPrintBtn"
+                        onclick="printAgreementDocument()">
+                        <i class="fa-solid fa-print me-1"></i> Print / Save PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= VIDEO TOUR MODAL ================= -->
+    <div class="modal fade" id="videoTourModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-dark text-white border-0"
+                style="border-radius: var(--radius-lg); overflow: hidden;">
+                <div class="modal-header border-0 pb-0">
+                    <h6 class="modal-title fw-bold" id="videoModalTitle">Live Verified Video Tour</h6>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"
+                        onclick="stopModalVideo()"></button>
+                </div>
+                <div class="modal-body p-3">
+                    <div class="ratio ratio-16x9 rounded-3 overflow-hidden bg-black">
+                        <video id="modalVideoPlayer" controls playsinline>
+                            <source src="" type="video/mp4">
+                            Your browser does not support the video player.
+                        </video>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between mt-3 px-1">
+                        <div>
+                            <span class="badge bg-success me-2"><i class="fa-solid fa-check-double me-1"></i>Verified on
+                                Video Call</span>
+                            <span id="videoModalArea" class="text-light small">Karachi</span>
+                        </div>
+                        <button class="btn btn-sm btn-gold px-3 rounded-pill" onclick="bookCallForCurrent()">
+                            <i class="fa-solid fa-phone me-1"></i> Book Live Call
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= LIST PROPERTY MODAL ================= -->
+    <div class="modal fade" id="listPropertyModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: var(--radius-lg);">
+                <div class="modal-header border-0 pb-0">
+                    <div>
+                        <h5 class="modal-title fw-extrabold">List Your Karachi Property</h5>
+                        <small class="text-muted">Get a verified gold badge after a 2-minute video call.</small>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="newPropertyForm" onsubmit="handleNewPropertySubmit(event)">
+
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Property Title (English)</label>
+                            <input type="text" id="lpTitle" class="form-control rounded-3"
+                                placeholder="e.g. 2 Bed Flat, Gulshan Block 13" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Property Title (Urdu)</label>
+                            <input type="text" id="lpTitleUr" class="form-control rounded-3" dir="rtl"
+                                style="font-family: 'Noto Nastaliq Urdu', serif;"
+                                placeholder="2 کمرے فلیٹ، گلشن بلاک 13" required>
+                        </div>
+
+                        <div class="row g-2 mb-3">
+                            <div class="col-6">
+                                <label class="form-label small fw-bold">Area / Town</label>
+                                <select id="lpArea" class="form-select rounded-3" required>
+                                    <option value="Gulshan-e-Iqbal">Gulshan-e-Iqbal</option>
+                                    <option value="Nazimabad">Nazimabad</option>
+                                    <option value="North Karachi">North Karachi</option>
+                                    <option value="Korangi">Korangi</option>
+                                    <option value="DHA">DHA</option>
+                                    <option value="Malir">Malir</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label small fw-bold">Property Type</label>
+                                <select id="lpType" class="form-select rounded-3" required>
+                                    <option value="Flat/Apartment">Flat / Apartment</option>
+                                    <option value="Portion">Portion</option>
+                                    <option value="Single Room">Single Room</option>
+                                    <option value="House">House</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Street Address / Building Name</label>
+                            <input type="text" id="lpAddress" class="form-control rounded-3"
+                                placeholder="Flat 301, Block 13-D" required>
+                        </div>
+
+                        <div class="row g-2 mb-3">
+                            <div class="col-6">
+                                <label class="form-label small fw-bold">Monthly Rent (PKR)</label>
+                                <input type="number" id="lpRent" class="form-control rounded-3" placeholder="35000"
+                                    required>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label small fw-bold">Security Deposit (PKR)</label>
+                                <input type="number" id="lpDeposit" class="form-control rounded-3" placeholder="70000">
+                            </div>
+                        </div>
+
+                        <div class="row g-2 mb-3">
+                            <div class="col-4">
+                                <label class="form-label small fw-bold">Bedrooms</label>
+                                <input type="number" id="lpRooms" min="1" max="10" value="2"
+                                    class="form-control rounded-3" required>
+                            </div>
+                            <div class="col-4">
+                                <label class="form-label small fw-bold">Bathrooms</label>
+                                <input type="number" id="lpBaths" min="1" max="10" value="2"
+                                    class="form-control rounded-3" required>
+                            </div>
+                            <div class="col-4">
+                                <label class="form-label small fw-bold">Sqft</label>
+                                <input type="number" id="lpSqft" class="form-control rounded-3" placeholder="900">
+                            </div>
+                        </div>
+
+                        <div class="row g-2 mb-3">
+                            <div class="col-6">
+                                <label class="form-label small fw-bold">Water Source</label>
+                                <select id="lpWater" class="form-select rounded-3">
+                                    <option value="line_water_meetha">Sweet Line Water</option>
+                                    <option value="boring_water">Sweet Boring</option>
+                                    <option value="tanker_dependent">Tanker Dependent</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label small fw-bold">Gas Pressure</label>
+                                <select id="lpGas" class="form-select rounded-3">
+                                    <option value="sui_gas_high_pressure">High / Good</option>
+                                    <option value="sui_gas_low_pressure">Low</option>
+                                    <option value="lpg_cylinder_only">Cylinder Only</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="mb-3 p-3 bg-light rounded-3 border">
+                            <label class="form-label small fw-bold">Property Main Image</label>
+                            <input type="file" id="lpImageFile" class="form-control rounded-3" accept="image/*"
+                                onchange="handleFrontendImageUpload(event)" required>
+                            <input type="hidden" id="lpImageUrl" value="">
+                            <small id="lpUploadStatus" class="text-muted d-block mt-1"></small>
+                            <img id="lpImagePreview" src="" class="mt-2 rounded"
+                                style="max-width: 100%; max-height: 100px; display: none;">
+                        </div>
+
+                        <div class="row g-2 mb-3">
+                            <div class="col-6">
+                                <label class="form-label small fw-bold">Your Name</label>
+                                <input type="text" id="lpOwnerName" class="form-control rounded-3"
+                                    placeholder="e.g. Rashid" required>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label small fw-bold">WhatsApp Number</label>
+                                <input type="text" id="lpPhone" class="form-control rounded-3"
+                                    placeholder="923001234567" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-gold w-100 py-2.5 rounded-pill fw-bold mt-2"
+                            id="lpSubmitBtn">
+                            Submit & Book Video Verification
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-dark text-white pt-5 pb-4 mt-5">
+        <div class="container-xl">
+            <div class="row g-4 mb-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <span class="brand-logo-icon"><i class="fa-solid fa-house-chimney"></i></span>
+                        <span class="fs-4 fw-extrabold text-white">Bakhshish<span
+                                style="color: var(--primary-gold);">Karaaya</span></span>
+                    </div>
+                    <p class="text-white-50 small mb-3">
+                        Karachi's trusted rental marketplace. We protect tenants from fake listings and advance fraud by
+                        conducting live video call verifications with landlords.
+                    </p>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="btn-icon-circle text-white bg-secondary"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="btn-icon-circle text-white bg-secondary"><i
+                                class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" class="btn-icon-circle text-white bg-secondary"><i
+                                class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="text-uppercase fw-bold text-warning mb-3">Quick Links</h6>
+                    <ul class="list-unstyled text-white-50 small space-y-2">
+                        <li class="mb-2"><a href="#browseSection" class="text-white-50 text-decoration-none">Verified
+                                Flats</a></li>
+                        <li class="mb-2"><a href="#browseSection" class="text-white-50 text-decoration-none">Single
+                                Rooms</a></li>
+                        <li class="mb-2"><a href="#browseSection" class="text-white-50 text-decoration-none">Upper
+                                Portions</a></li>
+                        <li class="mb-2"><a href="#" data-bs-toggle="modal" data-bs-target="#agreementModal"
+                                class="text-white-50 text-decoration-none">Rental Agreement</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="text-uppercase fw-bold text-danger mb-3">
+                        <i class="fa-solid fa-triangle-exclamation me-1"></i>Karachi Safety Tips
+                    </h6>
+                    <ul class="list-unstyled text-white-50 small">
+                        <li class="mb-2">• <strong>Never transfer token/advance money</strong> before physical
+                            inspection.</li>
+                        <li class="mb-2">• Cross check landlord CNIC with K-Electric meter bill.</li>
+                        <li class="mb-2">• Ask neighbors directly about summer tanker supply.</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="text-uppercase fw-bold text-warning mb-3">Helpline & Support</h6>
+                    <p class="text-white-50 small mb-2"><i class="fa-solid fa-phone me-2 text-warning"></i>
+                        0300-GHAR-DKH (0300-4427354)</p>
+                    <p class="text-white-50 small mb-2"><i class="fa-brands fa-whatsapp me-2 text-success"></i> +92 300
+                        0000000</p>
+                    <p class="text-white-50 small mb-0"><i class="fa-solid fa-map-pin me-2 text-warning"></i>
+                        Shahrah-e-Faisal, Karachi, Pakistan</p>
+                </div>
+            </div>
+
+            <div class="border-top border-secondary pt-3 text-center text-white-50 small">
+                © 2026 Bakhshish Karaya Technologies. Made for Karachi families with trust & transparency.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Swiper.js JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- ================= FIREBASE + APP LOGIC (MODULE) ================= -->
+    <script type="module" src="config.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
