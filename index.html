@@ -691,6 +691,34 @@
             font-size: 1rem;
             flex-shrink: 0;
         }
+
+        @media (max-width:576px) {
+            * {
+                margin: 0px;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body,
+            html {
+                width: 100%;
+                height: 100%;
+                overflow-x: hidden;
+            }
+
+            .hero-pill-badge {
+                font-size: 8px;
+            }
+
+            .quick-tag {
+                padding: 4px 10px;
+                font-size: 10px;
+            }
+
+            .step-card {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 
@@ -889,7 +917,7 @@
                     kiraye par lene ka 4-step asaan tareeqa.</p>
             </div>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
+                <div class="col-6 col-lg-3">
                     <div class="step-card text-center">
                         <div class="step-number-badge mx-auto">1</div>
                         <h5 class="fw-bold mb-2">Search with Voice or Text</h5>
@@ -897,7 +925,7 @@
                             ya English mein bolein ya filter karein.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
+                <div class="col-6 col-lg-3">
                     <div class="step-card text-center">
                         <div class="step-number-badge mx-auto">2</div>
                         <h5 class="fw-bold mb-2">Watch Live Video Tour</h5>
@@ -905,7 +933,7 @@
                             se pehle rooms aur condition ka sach pata chale.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
+                <div class="col-6 col-lg-3">
                     <div class="step-card text-center">
                         <div class="step-number-badge mx-auto">3</div>
                         <h5 class="fw-bold mb-2">Direct Owner WhatsApp</h5>
@@ -913,7 +941,7 @@
                             baat karein aur physical inspection schedule karein.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
+                <div class="col-6 col-lg-3">
                     <div class="step-card text-center">
                         <div class="step-number-badge mx-auto">4</div>
                         <h5 class="fw-bold mb-2">Print Legal Agreement</h5>
@@ -1122,96 +1150,7 @@
 
                 <!-- Right Column: Interactive Video Call Audit Mockup -->
                 <div class="col-lg-6">
-                    <div class="audit-mockup-frame">
-
-                        <!-- Call Top Status Bar -->
-                        <div class="d-flex align-items-center justify-content-between mb-3 px-2">
-                            <div class="call-header-badge">
-                                <span class="live-indicator-dot"></span>
-                                <span>AUDIT CALL IN PROGRESS</span>
-                            </div>
-                            <span class="text-white-50 small fw-bold">
-                                <i class="fa-solid fa-lock text-warning me-1"></i> End-to-End Verified
-                            </span>
-                        </div>
-
-                        <!-- Video Call Screen Frame -->
-                        <div class="position-relative rounded-4 overflow-hidden"
-                            style="height: 380px; background: #000;">
-                            <!-- Mockup Background (Flat Interior) -->
-                            <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&auto=format&fit=crop&q=80"
-                                alt="Live Room Inspection" class="w-100 h-100 object-fit-cover opacity-75">
-
-                            <!-- Overlay: Owner PiP Camera -->
-                            <div class="position-absolute top-0 end-0 m-3 p-1 rounded-3 bg-dark border border-warning"
-                                style="width: 120px; height: 160px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.6);">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&auto=format&fit=crop&q=80"
-                                    alt="Verified Landlord" class="w-100 h-100 object-fit-cover">
-                                <span
-                                    class="position-absolute bottom-0 start-0 w-100 text-center bg-black bg-opacity-75 text-white"
-                                    style="font-size: 0.65rem; padding: 2px;">Verified Owner</span>
-                            </div>
-
-                            <!-- Real-time Verification Overlay Chips -->
-                            <div class="position-absolute top-0 start-0 m-3 d-flex flex-column gap-2">
-                                <span
-                                    class="badge bg-success bg-opacity-90 py-1.5 px-3 rounded-pill text-white fw-bold shadow-sm"
-                                    style="font-size: 0.75rem;">
-                                    <i class="fa-solid fa-circle-check me-1"></i> CNIC: 42101-*******-1 Matched
-                                </span>
-                                <span
-                                    class="badge bg-primary bg-opacity-90 py-1.5 px-3 rounded-pill text-white fw-bold shadow-sm"
-                                    style="font-size: 0.75rem;">
-                                    <i class="fa-solid fa-droplet me-1"></i> Line Water Running (Live)
-                                </span>
-                                <span class="badge bg-warning text-dark fw-bold py-1.5 px-3 rounded-pill shadow-sm"
-                                    style="font-size: 0.75rem;">
-                                    <i class="fa-solid fa-bolt me-1"></i> PMT Feeder: Load-shedding 0h
-                                </span>
-                            </div>
-
-                            <!-- Bottom Audio / Visual Status -->
-                            <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-gradient"
-                                style="background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);">
-                                <div class="d-flex align-items-center justify-content-between text-white">
-                                    <div>
-                                        <h6 class="mb-0 fw-bold">Gulshan Block 13-D — Flat Inspection</h6>
-                                        <small class="text-white-50">Auditor: Hamza (Bakhshish Verification
-                                            Desk)</small>
-                                    </div>
-                                    <div class="d-flex gap-2">
-                                        <span class="btn btn-sm btn-outline-light rounded-circle"
-                                            style="width:34px;height:34px;display:grid;place-items:center;">
-                                            <i class="fa-solid fa-microphone"></i>
-                                        </span>
-                                        <span class="btn btn-sm btn-danger rounded-circle"
-                                            style="width:34px;height:34px;display:grid;place-items:center;">
-                                            <i class="fa-solid fa-phone-slash"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- Badge Trust Banner Under Mockup -->
-                        <div
-                            class="mt-3 p-3 rounded-3 bg-white bg-opacity-10 border border-white-10 d-flex align-items-center justify-content-between">
-                            <div class="d-flex align-items-center gap-2">
-                                <i class="fa-solid fa-certificate text-warning fs-4"></i>
-                                <div>
-                                    <small class="text-white-50 d-block" style="font-size: 0.7rem;">OFFICIAL
-                                        PROTOCOL</small>
-                                    <span class="fw-bold text-white small">Green Badge issuance takes 24 hours</span>
-                                </div>
-                            </div>
-                            <span class="badge bg-warning text-dark fw-bold px-3 py-1.5 rounded-pill"
-                                style="font-size: 0.75rem;">
-                                100% Anti-Fraud
-                            </span>
-                        </div>
-
-                    </div>
+                    <img class="w-100 img-fluid" src="./public/check.jfif" alt="verify properties">
                 </div>
 
             </div>
@@ -1327,15 +1266,15 @@
                         liye kiya gaya. Hum har property ka live video call ke zariye jaiza lete hain, meter bills check
                         karte hain aur tenant ko wohi dikhate hain jo ground par maujood hai.</p>
                     <div class="row g-3 pt-2">
-                        <div class="col-sm-4 text-center text-sm-start">
+                        <div class="col-4 text-center text-sm-start">
                             <h3 class="fw-extrabold text-warning mb-0">100%</h3>
                             <small class="text-muted fw-semibold">Video Verified</small>
                         </div>
-                        <div class="col-sm-4 text-center text-sm-start">
+                        <div class="col-4 text-center text-sm-start">
                             <h3 class="fw-extrabold text-warning mb-0">15+</h3>
                             <small class="text-muted fw-semibold">Karachi Towns</small>
                         </div>
-                        <div class="col-sm-4 text-center text-sm-start">
+                        <div class="col-4 text-center text-sm-start">
                             <h3 class="fw-extrabold text-warning mb-0">Rs 0</h3>
                             <small class="text-muted fw-semibold">Hidden Charges</small>
                         </div>
@@ -1649,7 +1588,7 @@
 
                         <div class="mt-4 pt-3 border-top border-white-10">
                             <a href="https://wa.me/923000000000" target="_blank"
-                                class="btn btn-gold w-100 rounded-pill py-2.5 fw-bold d-inline-flex align-items-center justify-content-center gap-2">
+                                class="btn  w-100 rounded-pill py-2.5 fw-bold d-inline-flex align-items-center justify-content-center gap-2 bg-success text-white">
                                 <i class="fa-brands fa-whatsapp fs-5"></i> Chat on WhatsApp Now
                             </a>
                         </div>
